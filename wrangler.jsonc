@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "wuhujing",
+  "main": "./src/index.js",
+  "compatibility_date": "2026-03-07",
+  "workers_dev": true,
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true
+    }
+  },
+  "kv_namespaces": [
+    {
+      "binding": "LINKS","id": "1843f58fc97d4d05a3aaa5ec0709ee52"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "FILES",
+      "bucket_name": "love","preview_bucket_name": "love"
+    }
+  ],
+  "vars": {
+    "ADMIN_PATH": "/admin",
+    "ADMIN_PASS": "@Wj20061227",
+    "LONG_DOMAIN_BLACKLIST": "placeholder.invalid",
+    "SUFFIX_BLACKLIST": "admin,login,api"
+  }
+}

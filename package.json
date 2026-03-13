@@ -1,0 +1,49 @@
+{
+  "name": "wuhujing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloudflare Workers + KV shortlink service with admin panel",
+  "cloudflare": {
+    "label": "CFLink",
+    "products": [
+      "Workers",
+      "KV",
+      "R2"
+    ],
+    "categories": [],
+    "publish": true,
+    "bindings": {
+      "LINKS": {
+        "description": "KV namespace used to store shortlink mappings and indexes."
+      },
+      "FILES": {
+        "description": "R2 bucket binding used to store uploaded files. Default bucket name: `cflink-files`."
+      },
+      "ADMIN_PATH": {
+        "description": "Admin panel path. Default: `/admin`"
+      },
+      "ADMIN_PASS": {
+        "description": "Admin panel password. Change the default value before first use."
+      },
+      "LONG_DOMAIN_BLACKLIST": {
+        "description": "Optional blocked long URL domains. Leave empty if unused. Supports multiple lines or comma-separated values."
+      },
+      "SUFFIX_BLACKLIST": {
+        "description": "Optional blocked shortlink suffixes. Leave empty if unused. Supports multiple lines or comma-separated values."
+      }
+    }
+  },
+  "devDependencies": {
+    "wrangler": "^4.63.0"
+  },
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "check": "wrangler deploy --dry-run"
+  },
+  "dependencies": {
+    "highlight.js": "^11.11.1",
+    "marked": "^17.0.4",
+    "marked-highlight": "^2.2.3"
+  }
+}
